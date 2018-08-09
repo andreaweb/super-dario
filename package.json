@@ -1,0 +1,24 @@
+{
+  "name": "super-dario",
+  "version": "1.0.0",
+  "description": "'A simple animation'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "animation",
+    "css",
+    "javascript"
+  ],
+  "author": "Andrea Santana (andreaweb)",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
