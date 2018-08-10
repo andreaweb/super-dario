@@ -2,19 +2,24 @@
 	font-family: sans-serif;
 	margin: 0;
 }
+body{
+	position: relative;
+}
 .container{
 	width: 500px;
 	height: 100vh;
 	margin: 0 auto;
 	border: 2px solid red;
-	background: #6F320D
+	background: #6F320D;
+	position: relative;
+	overflow: hidden;
 }
 .bg{
 	background: url('../images/main-bg.jpg') no-repeat;
 	height: 317px;
 	width: 1020px;
 	border: 2px solid green;
-	position: fixed;
+	position:absolute;
 }
 .ground{
 	background: url('../images/ground.jpg') no-repeat;
@@ -22,7 +27,7 @@
 	width: 1020px;
 	top: 317px;
 	border: 2px solid brown;
-	position: fixed;
+	position: absolute;
 	animation: moveBG 8s infinite linear;
 }
 .dario{
@@ -31,8 +36,11 @@
 	height: 114px;
 	width: 80px;
 	top: 219px;
-	left: calc(50vw - 80px);
+	left: calc(50% - 40px);
 	animation: walk .4s steps(10, end) infinite;
+}
+.tap{
+	
 }
 @-webkit-keyframes walk {
     to { 
