@@ -1,0 +1,32 @@
+*{
+	font-family: sans-serif;
+	margin: 0;
+}
+.bg{
+	background: url('../images/main-bg.jpg') no-repeat;
+	height: 317px;
+	width: 1020px;
+	border: 2px solid green;
+	position: fixed;
+}
+.ground{
+	background: url('../images/ground.jpg') no-repeat;
+	height: 100px;
+	width: 1020px;
+	top: 317px;
+	border: 2px solid brown;
+	position: fixed;
+}
+.dario{
+	background: url('../images/dario.png') no-repeat;
+	position: absolute;
+	height: 114px;
+	width: 80px;
+	animation: walk .5s steps(10, end) infinite;
+}
+@-webkit-keyframes walk {
+    to { 
+        background-position: -818px;
+    }
+}
+/*animation to change bg position*/

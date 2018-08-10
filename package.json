@@ -15,8 +15,14 @@
   "author": "Andrea Santana (andreaweb)",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-latest": "^6.24.1",
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
     "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-stream": "^5.1.1"
   },
   "dependencies": {
     "lodash": "^4.17.10"
