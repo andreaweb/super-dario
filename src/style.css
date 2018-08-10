@@ -24,7 +24,7 @@ body{
 .ground{
 	background: url('../images/ground.jpg') no-repeat;
 	height: 100px;
-	width: 1020px;
+	width: 1530px;
 	top: 317px;
 	border: 2px solid brown;
 	position: absolute;
@@ -68,6 +68,27 @@ img{
 }
 @-webkit-keyframes moveBG {
 	to {
-		background-position: -1020px; 
+		background-position: -930px; 
+	}
+}
+
+/*media queries*/
+@media screen and (max-width: 550px){
+	.container{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 550px) and (max-height: 550px){
+	.bg{
+		height: 150px;
+	}
+	.ground{
+		top: 150px;
+	}
+	.dario{
+		top: 55px;
+	}
+	.tap{
+		bottom: 10%;
 	}
 }
