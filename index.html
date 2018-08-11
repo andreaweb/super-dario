@@ -6,12 +6,13 @@
   </head>
   <body>
 	<div class="container">
+		<img class="title" src="images/title-en.png">
 	  	<div class="bg"></div>	
 	  	<div class="ground"></div>
 	  	<div class="dario"></div>
 	  	<button class="tap">
-	  		<span>Play Now!</span>
-	  		<img src="images/tap.png">
+	  		<span class="span">Play Now!</span>
+	  		<img class="arrow" src="images/tap.png">
 	  	</button>
 	  	<div class="bullet"></div>
 	</div>
@@ -34,13 +35,14 @@
 
 	gameStart.addEventListener("click", (event) => {
 		document.getElementsByClassName("container")[0].className = document.getElementsByClassName("container")[0].className.concat(' game-on');
+		gameStart.className = gameStart.className.concat(' display-none');
 		gameOn = true;
 		startGame()
 	})
 
   	function startGame(){
   		let timer = setInterval(checkCol, 200); 
-  		
+
 		function checkCol(){
 			if(!gameOn){
 	  			return false;

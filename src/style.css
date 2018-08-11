@@ -14,6 +14,11 @@ body{
 	position: relative;
 	overflow: hidden;
 }
+.title {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 99px);
+}
 .bg{
 	background: url('../images/main-bg.jpg') no-repeat;
 	height: 317px;
@@ -79,17 +84,20 @@ body{
 
 }
 
-/*this is lazy, should add classes instead*/
-span{
+.span{
 	font-size: 21px;
 	font-weight: bold;
 	display: inline-block;
 	margin-bottom: 7px;
 }
-img{
+.arrow{
 	height: 40px;
 	display: inline-block;
 	margin-bottom: -12px;
+}
+
+.display-none{
+	display: none
 }
 
 /*game is frozen (Dario died) */
@@ -128,6 +136,10 @@ img{
 	}
 }
 @media screen and (max-width: 550px) and (max-height: 550px){
+	.title{
+		width: 100px;
+		left: calc(50% - 54px);
+	}
 	.bg{
 		height: 150px;
 	}
