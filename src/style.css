@@ -140,14 +140,26 @@ body{
 		width: 100px;
 		left: calc(50% - 54px);
 	}
+	.ground{/*kinda high so we can see the action button*/
+		top: 150px;
+	}
+	.game-on .ground{/*now there's no button, we can use the screen better*/
+    	top: 200px;
+	}
 	.bg{
 		height: 150px;
 	}
-	.ground{
-		top: 150px;
+	.game-on .bg{
+		height: 198px;
 	}
 	.dario{
 		top: 55px;
+	}
+	.game-on .dario{
+		top: 105px;
+	}
+	.game-on .bullet{
+		top: 147px;
 	}
 	.tap{
 		bottom: 10%;

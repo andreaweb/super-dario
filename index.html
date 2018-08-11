@@ -6,8 +6,8 @@
   </head>
   <body>
 	<div class="container">
-		<img class="title" src="images/title-en.png">
 	  	<div class="bg"></div>	
+	  	<img class="title" src="images/title-en.png">
 	  	<div class="ground"></div>
 	  	<div class="dario"></div>
 	  	<button class="tap">
@@ -36,6 +36,7 @@
 	gameStart.addEventListener("click", (event) => {
 		document.getElementsByClassName("container")[0].className = document.getElementsByClassName("container")[0].className.concat(' game-on');
 		gameStart.className = gameStart.className.concat(' display-none');
+		document.getElementsByClassName("title")[0].className = document.getElementsByClassName("title")[0].className.concat(' display-none');
 		gameOn = true;
 		startGame()
 	})
