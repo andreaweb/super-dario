@@ -49,19 +49,26 @@
 	  			return false;
 	  		}
 	    	let bulletPos = document.getElementsByClassName("bullet")[0].offsetLeft;
+	    	let darioPos = document.getElementsByClassName("dario")[0].offsetLeft;
 	    	let darioClasses = document.getElementsByClassName("dario")[0].className.split(' ');
 	    	let darioJump = darioClasses.indexOf('up');
 	    	let darioSmall = darioClasses.indexOf('small');
 
-	    	if(bulletPos > 210 && bulletPos < 250){
+	    	console.log(bulletPos);
+
+	    	//darioPos-40 54
+	    	//darioPos 94
+	    	if(bulletPos > darioPos && bulletPos < darioPos+40){
 	    		if(darioJump == -1 && darioSmall == -1){ /*dario did not jump (did not dodge bullet), dario is not small*/
 	    			console.log('Dario will become small')
-	    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' small')
+	    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' small');
 	    			return; //avoid else triggering immediately
 	    		}else if(darioJump == -1 && darioSmall > -1){/*dario did not dodge bullet, dario is small*/
-	    			console.log('Dario will fade and game will freeze')
-	    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' fade')
-	    			document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.concat(' freeze')
+	    			console.log('Dario will fade and game will freeze');
+	    			console.log(document.getElementsByTagName("body")[0].className);
+	    			console.log(document.getElementsByTagName("body")[0]);
+	    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' fade');
+	    			document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.concat(' freeze');
 	    			gameOn = false;
 	    		}
 		    }
@@ -74,7 +81,7 @@
 
 			//but just for half a sec!
 			setTimeout(function () { 
-	    		document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className .replace(/\bup\b/, "");
+	    		document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.replace(/\bup\b/, "");
 				console.log("Dario jumps")
 			}, 500);
 		});

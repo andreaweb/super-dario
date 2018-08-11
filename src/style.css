@@ -81,7 +81,6 @@ body{
 	width: 55px;
 	left: calc(100% - 55px);
 	animation: moveBullet 3s infinite linear;
-
 }
 
 .span{
@@ -158,10 +157,26 @@ body{
 	.game-on .dario{
 		top: 105px;
 	}
-	.game-on .bullet{
+	.game-on .up{
+		top: 20px;
+	}
+	.game-on .dario.small{
+		top: 141px;
+	}
+	.game-on .dario.small.up{
+		top: 61px;
+	}
+	.game-on .bullet{/*original animation would be too slow in a small screen*/
 		top: 147px;
+		left: 120%;
+		animation: moveBullet 2s infinite linear;
+	}
+	.freeze .bullet{/*avoids overwriting by rule above*/
+		animation-play-state: paused 
 	}
 	.tap{
 		bottom: 10%;
 	}
+	
+
 }
