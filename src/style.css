@@ -76,6 +76,13 @@ img{
 	margin-bottom: -12px;
 }
 
+/*game is frozen (Dario died) */
+.freeze .ground,
+.freeze .bullet{
+	animation-play-state: paused
+}
+
+
 /* animations*/
 @-webkit-keyframes walk {
     to { 

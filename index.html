@@ -39,6 +39,7 @@
     		}else if(darioJump == -1 && darioSmall > -1){
     			console.log('Dario will fade and game will freeze')
     			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' fade')
+    			document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.concat(' freeze')
     		}
 	    }
 	}
