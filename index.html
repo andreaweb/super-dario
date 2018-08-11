@@ -5,7 +5,7 @@
     <link href="src/style.css" rel="stylesheet">
   </head>
   <body>
-	<div class="game-on container">
+	<div class="container">
 	  	<div class="bg"></div>	
 	  	<div class="ground"></div>
 	  	<div class="dario"></div>
@@ -24,44 +24,58 @@
    
     //check bullet's left location and if .dario:not(.small):not(.up) add class small to dario
     
-    let timer = setInterval(checkCol, 200); 
-
   //   if(document.getElementsByTagName("body")[0].className.split(' ').indexOf('freeze') > -1){
   //   	//game is frozen, no need to check for collisions
   //   }else{
 		// timer = setInterval(checkCol, 200); 
   //   }
+  	let gameStart = document.getElementsByClassName("tap")[0];
+	let gameOn = false;
 
-    function checkCol(){
-    	let bulletPos = document.getElementsByClassName("bullet")[0].offsetLeft;
-    	let darioClasses = document.getElementsByClassName("dario")[0].className.split(' ');
-    	let darioJump = darioClasses.indexOf('up');
-    	let darioSmall = darioClasses.indexOf('small');
+	gameStart.addEventListener("click", (event) => {
+		document.getElementsByClassName("container")[0].className = document.getElementsByClassName("container")[0].className.concat(' game-on');
+		gameOn = true;
+		startGame()
+	})
 
-    	if(bulletPos > 210 && bulletPos < 250){
-    		if(darioJump == -1 && darioSmall == -1){ /*dario did not jump (did not dodge bullet), dario is not small*/
-    			console.log('Dario will become small')
-    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' small')
-    			return; //avoid else triggering immediately
-    		}else if(darioJump == -1 && darioSmall > -1){/*dario did not dodge bullet, dario is small*/
-    			console.log('Dario will fade and game will freeze')
-    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' fade')
-    			document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.concat(' freeze')
-    		}
-	    }
-	}
+  	function startGame(){
+  		let timer = setInterval(checkCol, 200); 
+  		
+		function checkCol(){
+			if(!gameOn){
+	  			return false;
+	  		}
+	    	let bulletPos = document.getElementsByClassName("bullet")[0].offsetLeft;
+	    	let darioClasses = document.getElementsByClassName("dario")[0].className.split(' ');
+	    	let darioJump = darioClasses.indexOf('up');
+	    	let darioSmall = darioClasses.indexOf('small');
 
-	// Dario jumps when any key is pressed
-	document.addEventListener("keypress", (event) => {
-		//adds class that makes him jump...
-		document.getElementsByClassName("dario")[0].className =  document.getElementsByClassName("dario")[0].className.concat(' up');
+	    	if(bulletPos > 210 && bulletPos < 250){
+	    		if(darioJump == -1 && darioSmall == -1){ /*dario did not jump (did not dodge bullet), dario is not small*/
+	    			console.log('Dario will become small')
+	    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' small')
+	    			return; //avoid else triggering immediately
+	    		}else if(darioJump == -1 && darioSmall > -1){/*dario did not dodge bullet, dario is small*/
+	    			console.log('Dario will fade and game will freeze')
+	    			document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className.concat(' fade')
+	    			document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.concat(' freeze')
+	    			gameOn = false;
+	    		}
+		    }
+		}
 
-		//but just for half a sec!
-		setTimeout(function () { 
-    		document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className .replace(/\bup\b/, "");
-			console.log("Dario jumps")
-		}, 500);
-	});
+		// Dario jumps when any key is pressed
+		document.addEventListener("keypress", (event) => {
+			//adds class that makes him jump...
+			document.getElementsByClassName("dario")[0].className =  document.getElementsByClassName("dario")[0].className.concat(' up');
+
+			//but just for half a sec!
+			setTimeout(function () { 
+	    		document.getElementsByClassName("dario")[0].className = document.getElementsByClassName("dario")[0].className .replace(/\bup\b/, "");
+				console.log("Dario jumps")
+			}, 500);
+		});
+  	}
     </script>
   </body>
 </html>
