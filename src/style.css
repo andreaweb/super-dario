@@ -38,10 +38,7 @@ body{
 	top: 219px;
 	left: calc(50% - 40px);
 	animation: walk .4s steps(10, end) infinite;
-	transition: opacity 1s;
-	-webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */
-  -webkit-transform: perspective(1000px); /* add to fix webkit bug jitter */
-  will-change: transform
+	transition: opacity 1s, top .8s;
 }
 .small{
 	height: calc(114px / 1.5);
@@ -63,6 +60,12 @@ body{
     left: calc(50% - 85px);
     padding: 5px 15px;
     cursor: pointer
+}
+.up{
+	top: 137px;
+}
+.small.up{
+	top: 169px;
 }
 /*stuff that should appear only if game is on*/
 .game-on .bullet{

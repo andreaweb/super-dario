@@ -8,7 +8,7 @@
 	<div class="game-on container">
 	  	<div class="bg"></div>	
 	  	<div class="ground"></div>
-	  	<div class="dario small"></div>
+	  	<div class="dario"></div>
 	  	<button class="tap">
 	  		<span>Play Now!</span>
 	  		<img src="images/tap.png">
@@ -50,7 +50,21 @@
     		}
 	    }
 	}
-    //check bullet's left location and if .dario.small):not(.up) dario has to fade and game has to freeze (all can be done through CSS)
+
+
+	// Dario jumps when any key is pressed
+	document.addEventListener("keypress", (event) => {
+		//adds class that makes him jump...
+		document.getElementsByClassName("dario")[0].className =  document.getElementsByClassName("dario")[0].className.concat(' up');
+
+		//but just for half a sec!
+		setTimeout(function () { 
+			let upIndex = document.getElementsByClassName("dario")[0].className.split(' ').indexOf('up');
+			let removeUp = document.getElementsByClassName("dario")[0].className.split(' ').splice(upIndex-1, 1);
+			console.log("I'm called");
+			document.getElementsByClassName("dario")[0].className =  removeUp;
+		}, 500);
+	});
     </script>
   </body>
 </html>
