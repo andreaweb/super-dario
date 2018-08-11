@@ -8,7 +8,7 @@
 	<div class="game-on container">
 	  	<div class="bg"></div>	
 	  	<div class="ground"></div>
-	  	<div class="dario"></div>
+	  	<div class="dario small"></div>
 	  	<button class="tap">
 	  		<span>Play Now!</span>
 	  		<img src="images/tap.png">
@@ -24,6 +24,13 @@
    
     //check bullet's left location and if .dario:not(.small):not(.up) add class small to dario
     
+    let timer = setInterval(checkCol, 200); 
+
+  //   if(document.getElementsByTagName("body")[0].className.split(' ').indexOf('freeze') > -1){
+  //   	//game is frozen, no need to check for collisions
+  //   }else{
+		// timer = setInterval(checkCol, 200); 
+  //   }
 
     function checkCol(){
     	let bulletPos = document.getElementsByClassName("bullet")[0].offsetLeft;
@@ -43,8 +50,6 @@
     		}
 	    }
 	}
-
-    let timer =  setInterval(checkCol, 200); 
     //check bullet's left location and if .dario.small):not(.up) dario has to fade and game has to freeze (all can be done through CSS)
     </script>
   </body>

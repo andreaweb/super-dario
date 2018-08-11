@@ -39,6 +39,16 @@ body{
 	left: calc(50% - 40px);
 	animation: walk .4s steps(10, end) infinite;
 	transition: opacity 1s;
+	-webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */
+  -webkit-transform: perspective(1000px); /* add to fix webkit bug jitter */
+  will-change: transform
+}
+.small{
+	height: calc(114px / 1.5);
+    width: calc(80px / 1.5);
+    background-size: cover;
+    animation: smallWalk .4s steps(10, end) infinite;
+    top: 257px;
 }
 .fade{
 	opacity: 0
@@ -62,8 +72,11 @@ body{
 	height: 55px;
 	width: 55px;
 	left: calc(100% - 55px);
-	animation: moveBullet 3s infinite linear;
+	/*animation: moveBullet 3s infinite linear;*/
+
 }
+
+/*this is lazy, should add classes instead*/
 span{
 	font-size: 21px;
 	font-weight: bold;
@@ -87,6 +100,11 @@ img{
 @-webkit-keyframes walk {
     to { 
         background-position: -818px;
+    }
+}
+@-webkit-keyframes smallWalk {
+    to { 
+        background-position: -545px;
     }
 }
 @-webkit-keyframes moveBG {
