@@ -50,6 +50,16 @@ body{
     padding: 5px 15px;
     cursor: pointer
 }
+/*stuff that should appear only if game is on*/
+.game-on .bullet{
+	background: url('../images/bullet.png') no-repeat;
+	top: 257px;
+	position: absolute;
+	height: 55px;
+	width: 55px;
+	left: calc(100% - 55px);
+	animation: moveBullet 3s infinite linear;
+}
 span{
 	font-size: 21px;
 	font-weight: bold;
@@ -61,6 +71,8 @@ img{
 	display: inline-block;
 	margin-bottom: -12px;
 }
+
+/* animations*/
 @-webkit-keyframes walk {
     to { 
         background-position: -818px;
@@ -69,6 +81,11 @@ img{
 @-webkit-keyframes moveBG {
 	to {
 		background-position: -930px; 
+	}
+}
+@-webkit-keyframes moveBullet {
+	to {
+		left: 0px; 
 	}
 }
 
