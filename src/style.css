@@ -75,7 +75,7 @@ body{
 	height: 55px;
 	width: 55px;
 	left: calc(100% - 55px);
-	/*animation: moveBullet 3s infinite linear;*/
+	animation: moveBullet 3s infinite linear;
 
 }
 
