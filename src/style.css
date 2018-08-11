@@ -9,7 +9,6 @@ body{
 	width: 500px;
 	height: 100vh;
 	margin: 0 auto;
-	border: 2px solid red;
 	background: #6F320D;
 	position: relative;
 	overflow: hidden;
@@ -23,7 +22,6 @@ body{
 	background: url('../images/main-bg.jpg') no-repeat;
 	height: 317px;
 	width: 1020px;
-	border: 2px solid green;
 	position:absolute;
 }
 .ground{
@@ -31,7 +29,6 @@ body{
 	height: 100px;
 	width: 1530px;
 	top: 317px;
-	border: 2px solid brown;
 	position: absolute;
 	animation: moveBG 8s infinite linear;
 }
@@ -72,17 +69,6 @@ body{
 .small.up{
 	top: 169px;
 }
-/*stuff that should appear only if game is on*/
-.game-on .bullet{
-	background: url('../images/bullet.png') no-repeat;
-	top: 257px;
-	position: absolute;
-	height: 55px;
-	width: 55px;
-	left: calc(100% - 55px);
-	animation: moveBullet 3s infinite linear;
-}
-
 .span{
 	font-size: 21px;
 	font-weight: bold;
@@ -98,6 +84,19 @@ body{
 .display-none{
 	display: none
 }
+
+/*stuff that should appear only if game is on*/
+.game-on .bullet{
+	background: url('../images/bullet.png') no-repeat;
+	top: 257px;
+	position: absolute;
+	height: 55px;
+	width: 55px;
+	left: calc(100% - 55px);
+	animation: moveBullet 3s infinite linear;
+}
+
+
 
 /*game is frozen (Dario died) */
 .freeze .ground,
@@ -119,7 +118,7 @@ body{
 }
 @-webkit-keyframes moveBG {
 	to {
-		background-position: -930px; 
+		background-position: -830px; 
 	}
 }
 @-webkit-keyframes moveBullet {
@@ -129,12 +128,52 @@ body{
 }
 
 /*media queries*/
-@media screen and (max-width: 550px){
+
+/*for phones with average or big screens*/
+@media screen and (max-width: 850px){
 	.container{
 		width: 100%;
 	}
+
+	.ground{/*kinda high so we can see the action button*/
+		top: 317px;
+	}
+	.bg{
+		height: 450px;
+	}
+	.game-on .bg{
+		height: 498px;
+	}
+	.dario{
+		top: 225px;
+	}
+	.up{
+		top: 145px;
+	}
+	.dario.small{
+		top: 255px;
+	}
+	.dario.small.up{
+		top: 205px;
+	}
+	.game-on .bullet{/*original animation would be too slow in a small screen*/
+		top: 275px;
+		left: 120%;
+		animation: moveBullet 2s infinite linear;
+	}
+	.freeze .bullet{/*avoids overwriting by rule above*/
+		animation-play-state: paused 
+	}
+	.tap{
+		bottom: 18%;
+	}
 }
-@media screen and (max-width: 550px){
+
+/*for phones with small screens*/
+@media screen and (max-width: 550px) and (max-height: 550px){
+	.container{
+		width: 100%;
+	}
 	.title{
 		width: 100px;
 		left: calc(50% - 54px);
@@ -177,6 +216,4 @@ body{
 	.tap{
 		bottom: 10%;
 	}
-	
-
 }
