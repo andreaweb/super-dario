@@ -134,7 +134,7 @@ body{
 		width: 100%;
 	}
 }
-@media screen and (max-width: 550px) and (max-height: 550px){
+@media screen and (max-width: 550px){
 	.title{
 		width: 100px;
 		left: calc(50% - 54px);
