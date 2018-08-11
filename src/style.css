@@ -38,6 +38,10 @@ body{
 	top: 219px;
 	left: calc(50% - 40px);
 	animation: walk .4s steps(10, end) infinite;
+	transition: opacity 1s;
+}
+.fade{
+	opacity: 0
 }
 .tap{
 	background-color: #F79229;
