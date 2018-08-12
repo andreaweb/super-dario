@@ -16,7 +16,7 @@ function startGame(){
 		if(!gameOn){
 			return false;
 		}
-		
+
 		let bulletPos = document.getElementsByClassName("bullet")[0].offsetLeft;
 		let darioPos = document.getElementsByClassName("dario")[0].offsetLeft;
 		let darioClasses = document.getElementsByClassName("dario")[0].className.split(' ');
