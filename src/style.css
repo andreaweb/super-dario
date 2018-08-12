@@ -106,22 +106,22 @@ body{
 
 
 /* animations*/
-@-webkit-keyframes walk {
+@keyframes walk {
     to { 
         background-position: -818px;
     }
 }
-@-webkit-keyframes smallWalk {
+@keyframes smallWalk {
     to { 
         background-position: -545px;
     }
 }
-@-webkit-keyframes moveBG {
+@keyframes moveBG {
 	to {
 		background-position: -830px; 
 	}
 }
-@-webkit-keyframes moveBullet {
+@keyframes moveBullet {
 	to {
 		left: 0px; 
 	}
@@ -135,7 +135,7 @@ body{
 		width: 100%;
 	}
 
-	.ground{/*kinda high so we can see the action button*/
+	.ground{
 		top: 317px;
 	}
 	.bg{
