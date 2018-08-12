@@ -9,7 +9,7 @@ var baseDir     = './';
 gulp.task('js', () => {
   gulp.src('./src/js/index.js')
     .pipe(webpackStream(webpackConfig), webpack)
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('browser-sync', function() {  
