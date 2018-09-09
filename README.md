@@ -1,6 +1,13 @@
 <h1>Super Dario</h1>
 <h2>Simple sample game for interactive campaign</h2>
 
+<h3>Check it out!</h3>
+<a href="https://andreaweb.github.io/super-dario/">
+	https://andreaweb.github.io/super-dario/
+</a>
+<img src="images/print.jpg"
+     alt="Print of Project "/>
+
 <h3>To install and run the application</h3>
 
 <ul>
